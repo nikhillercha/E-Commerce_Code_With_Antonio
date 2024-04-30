@@ -8,7 +8,7 @@
 * npx prisma generate
 * npx prisma db push
 * npx prisma migrate reset
-* npx prisma db push --preview-feature
+* npx prisma migrate resetnpx prisma migrate reset
 
 * stripe login
 

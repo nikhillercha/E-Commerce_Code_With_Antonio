@@ -12,9 +12,9 @@ export async function POST(
 
         const { label, imageUrl } = body; 
 
-        if (!userId) {
-            return new NextResponse("Unauthenticated", { status: 401 });
-        }
+        // if (!userId) {
+        //     return new NextResponse("Unauthenticated", { status: 401 });
+        // }
 
         if (!label) {
             return new NextResponse("Label is required", { status: 400});
@@ -31,13 +31,13 @@ export async function POST(
         const storeByUserId = await prismadb.store.findFirst({
             where: {
                 id: params.storeId,
-                userId
+                // userId
             }
         })
 
-        if (!storeByUserId) {
-            return new NextResponse("Unauthorized", { status: 403 });
-        }
+        // if (!storeByUserId) {
+        //     return new NextResponse("Unauthorized", { status: 403 });
+        // }
 
         const billboard = await prismadb.billboard.create({
             data : {

@@ -34,9 +34,9 @@ export async function PATCH (
 
         const { label, imageUrl } = body;
 
-        if (!userId) {
-            return new NextResponse("Unauthenticated", { status: 401 })
-        }
+        // if (!userId) {
+        //     return new NextResponse("Unauthenticated", { status: 401 })
+        // }
 
         if (!label) {
             return new NextResponse("Label is required", { status: 400 });
@@ -53,7 +53,7 @@ export async function PATCH (
         const storeByUserId = await prismadb.store.findFirst({
             where: {
                 id: params.storeId,
-                userId
+                // userId
             }
         })
 

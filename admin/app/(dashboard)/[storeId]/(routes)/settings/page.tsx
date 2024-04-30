@@ -11,20 +11,20 @@ interface SettingsPageProps {
 const SettingsPage: React.FC<SettingsPageProps> = async ({ params }) => {
     const { userId } = auth();
 
-    if(!userId) {
-        redirect('/sign-in');
-    }
+    // if(!userId) {
+    //     redirect('/sign-in');
+    // }
 
     const store = await prismadb.store.findFirst({
         where: {
             id: params.storeId,
-            userId
+            // userId
         }
     })
 
-    if (!store) {
-        redirect('/');
-    }
+    // if (!store) {
+    //     redirect('/');
+    // }
 
     return (
         <div className="flex-col">
